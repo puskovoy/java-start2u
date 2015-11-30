@@ -1,6 +1,7 @@
 class Qyeue {
-	char q[]; //Массив для хранения элементов очереди
-	int putloc, getloc; // размещения и извлечения элементов очереди
+
+	private char q[]; //Массив для хранения элементов очереди
+	private int putloc, getloc; // размещения и извлечения элементов очереди
 
 	Qyeue (int size) {
 		q = new char[size+1]; // выделить память для очереди
@@ -23,7 +24,6 @@ class Qyeue {
 			System.out.println(" - Qyeue is empty.");
 			return (char) 0;
 		}
-
 		getloc++;
 		return q[getloc];
 	}
@@ -40,12 +40,14 @@ class QDemo {
 		
 		System.out.println("Using bigQ to store the alphabet.");
 		// поместить буквенные символы в очередь bigQ 
-		for(i=0; i < 26; i++) bigQ.put((char) ('A' + i));
+		for(i=0; i < 26; i++) 
+			bigQ.put((char) ('A' + i));
 		// извлечь буквенные символы из очереди bigQ и отобразить 
 		System.out.print("Contents of bigQ: "); 
 		for(i=0; i < 26; i++)	{
 			ch = bigQ.get();
-			if(ch != (char) 0) System.out.print(ch);
+			if(ch != (char) 0) 
+				System.out.print(ch + " ");
 		}
 		System.out.println("\n");
 		System.out.println("Using smallQ to generate errors.");
@@ -62,7 +64,8 @@ class QDemo {
 		System.out.print("Contents of smallQ: "); 
 		for(i=0; i < 5; i++) { 
 			ch = smallQ.get();
-			if(ch != (char) 0) System.out.print(ch);
+			if(ch != (char) 0) 
+				System.out.print(ch);
 		}
 	}
 }
